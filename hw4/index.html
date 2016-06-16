@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <style>
+        #main {
+            height: 224px;
+            width: 300px;
+            float: left;
+             border: #0000cc 2px dashed; 
+           
+        }
+
+        #button {
+            height: 30px;
+            width: 110px;
+            margin: 0px 0px 0px 129px;
+        }
+
+        #div1 {
+            margin: 25px 0px 6px 15px;
+            ;
+            font-size: 25px;
+        }
+
+        #div2 {
+            margin: 5px 0px 0px 15px;
+            font-size: 25px;
+        }
+
+        #div3 {
+            margin: 10px 0px 0px 0px;
+        }
+
+        #number {
+            width: 150px;
+            height: 28px;
+        }
+
+        #color {
+            width: 150px;
+            height: 30px;
+            margin: 0px 0px 0px 25px;
+        }
+
+        #demo {
+            height: 15px;
+            padding-left: 18px;
+        }
+    </style>
+    <script type="text/javascript">
+        
+
+var db = openDatabase('kevin123', '1.0', 'sqldb', 2 * 1024 * 1024);
+db.transaction(function (tx) {
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ColorNumberDatabase (color,number)');
+});
+
+function clickButton() {
+      
+    if (document.getElementById("myForm").checkValidity()) {
+       
+        var selcolor = document.getElementById('color').value;
+        var selnumber = document.getElementById('number').value;
+        var queryString = "INSERT INTO ColorNumberDatabase (color,number) VALUES ('" + selcolor + "','" + selnumber + "')";
+        storedata(queryString);
+        queryString = "SELECT * FROM ColorNumberDatabase";        
+        printData(queryString);
+        
+    }
+}
+function storedata(queryString) {
+    db.transaction(function (tx) {
+        tx.executeSql(queryString);
+    });
+};
+
+function printData(queryString) {
+  
+    db.transaction(function (tx) {
+        tx.executeSql(queryString, [], function (tx, results) {
+          
+            var length = results.rows.length;
+            var i;
+            for (i = 0; i < length; i++) {
+                
+                alert("Color:-" + results.rows.item(i).color + "   " + "Number:- " + results.rows.item(i).number);
+            }
+        },null);
+
+    });
+}
+
+   </script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form id="myForm" onsubmit="event.preventDefault();">
+        <div id="main">
+            <div id="div1">
+                <label><i>Color</i></label>
+                <input type="color" id="color" />
+            </div><br />
+            <div id="div2">
+                <label><i>Number</i></label>
+                <input type="number" min="0" max="130" id="number" required />
+            </div>
+            <div> <p id="demo"></p></div>
+            <div id="div3"><input type="submit" value="Save" id="button"  onclick="clickButton();" /></div>
+        </div>
+    </form>
+  </body>
+
+</html>
