@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>TABLE LAYOUT</title>
+<style>
+
+.button
+{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.Input
+{
+	background-color: #4Cbe50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<form name="cal">
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="verdana" color="black" size="7">Kakshil Patel(19009pk)</font>
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="verdana" color="black" size="7">Calculator</font>
+<table border="2">
+<br><br>
+
+<tr><td>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="textbox" value="" class="Input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="reset" class="button"><b>Clear</b></button>&nbsp;
+<button type="button" class="button" onclick="document.cal.textbox.value=eval(document.cal.textbox.value)"><b>=</b></button>&nbsp;
+<button type="button" class="button" onclick="document.cal.textbox.value+='+/-'"><b>+/-</b></button>&nbsp;
+<button type="button" class="button" onclick="document.cal.textbox.value+='.'"><b>.</b></button>&nbsp;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="document.cal.textbox.value+='*'" class="button"><b>*</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='/'" class="button"><b>/</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='+'" class="button"><b>+</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='-'" class="button"><b>-</b></button>&nbsp;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="document.cal.textbox.value+='1'" class="button"><b>1</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='2'" class="button"><b>2</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='3'" class="button"><b>3</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='4'" class="button"><b>4</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='5'" class="button"><b>5</b></button>&nbsp;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="document.cal.textbox.value+='6'" class="button"><b>6</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='7'" class="button"><b>7</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='8'" class="button"><b>8</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='9'" class="button"><b>9</b></button>&nbsp;
+<button type="button" onclick="document.cal.textbox.value+='0'" class="button"><b>0</b></button>&nbsp;<br><br>
+
+</td>
+</tr>
+
+
+</tabel>
+
+
+</form>
+
+</body>
+</html>
